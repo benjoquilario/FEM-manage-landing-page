@@ -228,6 +228,7 @@
 }
 
 .section {
+   transition: all 600ms ease-in-out;
    &--hidden {
       opacity: 0;
       transform: translateY(9rem);

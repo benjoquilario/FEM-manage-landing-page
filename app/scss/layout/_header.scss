@@ -33,8 +33,9 @@
    }
 
    &__logo {
-      width: rem(107);
+      width: rem(123);
       height: rem(22);
+      z-index: 10;
 
       @media screen and (min-width: 48em) {
          width: 100%;
