@@ -1,0 +1,62 @@
+@use '../util/' as *;
+
+html {
+   font-size: 100%;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+   box-sizing: inherit;
+}
+
+body {
+   position: relative;
+   margin: 0;
+   padding: 0;
+   font-family: var(--font-Vietnam);
+   font-size: rem(16);
+   color: var(--dark-blue);
+   overflow-x: hidden;
+
+   @media screen and (max-width: 477.9375em) {
+      &.no-scroll {
+         overflow: hidden;
+      }
+   }
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+
+   &:focus {
+      outline: none;
+   }
+
+   &:focus-visible {
+      outline: rem(2) solid var(--bright-red);
+      outline-offset: rem(3);
+   }
+}
+
+ul,
+ol {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+main {
+   overflow: hidden;
+}

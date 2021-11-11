@@ -1,0 +1,98 @@
+@use '../util/' as *;
+
+.btn {
+   $root: &;
+
+   position: relative;
+   outline: none;
+   border: none;
+   font-size: rem(15);
+   font-weight: 600;
+   cursor: pointer;
+   transition: background-color 300ms, border 300ms ease-in;
+
+   &:focus {
+      outline: none;
+   }
+
+   &:focus-visible {
+      outline: rem(3) solid var(--bright-red);
+      outline-offset: rem(3);
+   }
+
+   &--menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: transparent;
+      padding: 0;
+      transition: all 300ms ease-in-out;
+
+      @media screen and (min-width: 48em) {
+         display: none;
+      }
+
+      &.menu--active {
+         .btn {
+            &--menu--bar {
+               &:nth-child(1) {
+                  transform: rotate(45deg) translate(2px, 5px);
+                  transition-delay: 150ms;
+               }
+
+               &:nth-child(2) {
+                  opacity: 0;
+               }
+
+               &:nth-child(3) {
+                  transform: rotate(-45deg) translate(5px, -8px);
+                  transition-delay: 150ms;
+               }
+            }
+         }
+      }
+
+      &--bar {
+         transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+         transition-duration: 200ms;
+         width: rem(24);
+         height: rem(4);
+         background-color: var(--dark-blue);
+         display: block;
+
+         &:not(:last-of-type) {
+            margin-bottom: 0.2rem;
+         }
+      }
+   }
+
+   &--cta {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--bright-red);
+      color: var(--very-light-gray);
+      width: rem(137);
+      height: rem(43);
+      margin-top: rem(29);
+      border-radius: rem(20);
+      font-size: rem(14);
+      font-weight: 600;
+      border: rem(2) solid var(--dark-bright-red);
+
+      &:hover {
+         background-color: var(---light-bright-red);
+      }
+   }
+
+   &--submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--bright-red);
+      color: var(--very-light-gray);
+      width: rem(109);
+      border-radius: rem(40);
+   }
+}

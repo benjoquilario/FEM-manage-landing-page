@@ -1,0 +1,125 @@
+@use '../util/' as *;
+
+.footer {
+   position: relative;
+   padding: rem(55) rem(22) rem(50);
+   background-color: var(--very-dark-Blue);
+
+   &__container {
+      display: grid;
+      grid-template-areas:
+         'form'
+         'link'
+         'icons'
+         'logo'
+         'copyright';
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-gap: rem(55);
+      justify-items: center;
+      align-items: center;
+
+      @media screen and (min-width: 48em) {
+         grid-template-columns:
+            1fr 2fr
+            1.4fr;
+         justify-items: flex-start;
+         grid-template-areas:
+            'logo link form'
+            'icons link copyright';
+      }
+   }
+
+   &__form {
+      grid-area: form;
+      position: relative;
+      width: 100%;
+      display: flex;
+      gap: rem(10);
+
+      &__email {
+         width: 100%;
+         border: none;
+         outline: none;
+         height: rem(46);
+         border-radius: rem(40);
+         padding: rem(8) rem(21);
+
+         &:focus {
+            outline: rem(2) solid var(--bright-red);
+            outline-offset: rem(3);
+         }
+      }
+
+      &__result {
+         position: absolute;
+         top: rem(50);
+         left: rem(5);
+         color: var(--bright-red);
+         font-size: 0.75rem;
+         opacity: 0;
+         transform: translateX(-1.25rem);
+         transition: opacity 350ms ease-in-out, transform 350ms ease-in;
+
+         &.error {
+            opacity: 1;
+            transform: translateX(0);
+            transition: opacity 350ms ease-in-out, transform 350ms ease-in;
+         }
+      }
+   }
+
+   &__links {
+      grid-area: link;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      padding-left: rem(42);
+      padding-right: rem(16);
+
+      @media screen and (min-width: 48em) {
+         display: grid;
+         grid-template-columns: 1.3fr 1fr;
+         padding: 0;
+      }
+   }
+
+   &__item {
+      color: var(--very-pale-red);
+      margin-bottom: rem(12);
+   }
+
+   &__link {
+      position: relative;
+      transition: all 350ms ease-in-out;
+
+      &:hover {
+         color: var(--bright-red);
+         transition: all 350ms ease-in-out;
+      }
+   }
+
+   &__icons {
+      grid-area: icons;
+
+      &__link {
+         &:hover {
+            transition: all 350ms ease-in-out;
+
+            .footer__icons__icon {
+               color: var(--bright-red);
+               transition: all 350ms ease-in-out;
+            }
+         }
+      }
+   }
+
+   &__logo {
+      grid-area: logo;
+   }
+
+   &__copy {
+      grid-area: copyright;
+      color: var(--dark-grayish-Blue);
+   }
+}

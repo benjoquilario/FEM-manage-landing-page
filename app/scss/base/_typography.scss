@@ -1,0 +1,75 @@
+@use '../util/' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+   margin: 0;
+}
+
+.heading {
+   color: var(--dark-blue);
+
+   &--xxl {
+      font-size: clamp(2.375rem, 5vw, 3.3125rem);
+      line-height: rem(51);
+      margin-bottom: rem(8);
+
+      @media screen and (min-width: 48em) {
+         line-height: 1.24;
+         margin-bottom: rem(22);
+      }
+   }
+
+   &--xl {
+      font-size: clamp(1.875rem, 5vw, 40px);
+      margin-bottom: 15px;
+   }
+
+   &--testimonial {
+      font-size: clamp(30px, 5vw, 2.5rem);
+      text-align: center;
+   }
+}
+
+.paragraph {
+   color: var(--dark-grayish-Blue);
+
+   &--hero {
+      font-size: rem(17);
+      line-height: rem(28);
+
+      @media screen and (min-width: 48em) {
+         max-width: rem(355);
+         font-size: rem(16);
+      }
+   }
+
+   &--description {
+      font-size: clamp(0.9375rem, 3vw, 1rem);
+      line-height: rem(27);
+
+      @media screen and (min-width: 48em) {
+         max-width: rem(355);
+      }
+   }
+
+   &--features,
+   &--testimonial {
+      font-size: rem(14);
+      line-height: rem(28);
+   }
+
+   &--features {
+      font-size: rem(15);
+      max-width: rem(431);
+      margin-left: auto;
+   }
+
+   &--testimonial {
+      font-size: clamp(0.875rem, 4vw, 1rem);
+   }
+}

@@ -1,0 +1,14 @@
+@use '../util/' as *;
+
+.footer__icons {
+   &__icon {
+      color: var(--very-pale-red);
+      font-size: rem(33);
+      margin: 0 rem(14);
+
+      @media screen and (min-width: 48em) {
+         margin: 0 rem(6);
+         font-size: rem(22);
+      }
+   }
+}
